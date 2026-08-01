@@ -22,7 +22,7 @@ empréstimo é possível registrar o título do livro, o nome do leitor e o praz
 ## Estrutura dos arquivos
 
 ```
-index.html   → estrutura das telas (home, coleção/empréstimos, modal de cadastro)
+index.html   → estrutura das telas (página inicial, coleção/empréstimos, modal de cadastro)
 style.css    → estilos visuais, incluindo o modal e o layout responsivo
 script.js    → toda a lógica: estado da aplicação, CRUD e persistência
 README.md    → este arquivo
@@ -30,7 +30,7 @@ README.md    → este arquivo
 
 ## Como os dados são armazenados e renderizados
 
-Cada empréstimo é um objeto JavaScript com este formato:
+Cada empréstimo é um objeto Javascript com este formato:
 
 ```js
 {
@@ -50,7 +50,7 @@ em `localStorage`, sob a chave `"biblioteca-emprestimos"`.
 
 Quando a página é carregada, a função `carregarEmprestimos()` faz o caminho inverso: lê a string salva
 no `localStorage`, converte de volta para array com `JSON.parse()` e usa isso como estado inicial. Se
-não houver nada salvo (primeiro acesso), o app usa uma lista de exemplo (`dadosIniciais`) só para não
+não houver nada salvo (primeiro acesso), o app usa uma lista de exemplo  (`dadosIniciais`) só para não
 começar vazio, e já grava essa lista no `localStorage`.
 
 A tela nunca é montada "na mão" no HTML: sempre que o array `emprestimos` muda, a função
