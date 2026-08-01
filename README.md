@@ -84,12 +84,7 @@ separadamente pela função `renderizarHome()`.
 Nesta versão, os empréstimos existem apenas em memória, na variável `emprestimos` dentro de
 `script.js`. Isso significa que, ao recarregar a página, a lista volta ao estado inicial definido no
 código (os três empréstimos de exemplo). Não há gravação em `localStorage` nem em nenhum outro tipo de
-armazenamento — o app usa exclusivamente o array `emprestimos` como estado.
-
-> **Atenção:** o critério de avaliação do PDF da atividade pontua "Persistência dos dados
-> (localStorage)" em 15 pontos. Sem essa camada, o app perde essa pontuação. Se for necessário retomar
-> a persistência antes da entrega, basta reintroduzir a leitura/gravação em `localStorage` ao redor do
-> array `emprestimos`.
+armazenamento, nesse caso, o app usa exclusivamente o array `emprestimos` como estado.
 
 ## Dificuldade encontrada e como foi resolvida
 
@@ -102,5 +97,4 @@ plano para atualizar os dados salvos.
 
 ## Demonstração
 
-- Link do GitHub Pages: _adicionar aqui após publicar_
-- Vídeo de demonstração: _adicionar aqui, se optar por gravar em vez de apresentar ao vivo_
+- Vídeo de demonstração: Hospedado no Youtube (link do vídeo enviado no Google Classroom).
