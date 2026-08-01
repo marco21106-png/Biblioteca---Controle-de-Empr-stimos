@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Biblioteca - Controle de Empréstimos</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="screen-backdrop"></div>
+        <!-- Tela inicial -->
+        <div class="screen-home screen">
+            <div class="head-wrapper">
+
+                <div class="welcome">
+                    <div class="content">
+                        <h1>Olá, Marco!</h1>
+                        <p id="resumo-emprestimos">Você tem 0 empréstimos ativos.</p>
+                    </div>
+                    <div class="img">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" class="avatar-icone">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <div class="backdrop"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coleções (categorias de acervo) -->
+            <div class="colecoes-wrapper">
+                <div class="colecoes">
+                    <div class="colecao" data-categoria="Literatura">
+                        <div class="left">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                            </svg>
+                            <div class="content">
+                                <h1>Literatura</h1>
+                                <p><span class="contador" data-contador-de="Literatura">0</span> empréstimos</p>
+                            </div>
+                        </div>
+
+                        <div class="options">
+                            <div class="toggle_btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="colecao" data-categoria="Acadêmico">
+                        <div class="left">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443" />
+                            </svg>
+                            <div class="content">
+                                <h1>Acadêmico</h1>
+                                <p><span class="contador" data-contador-de="Acadêmico">0</span> empréstimos</p>
+                            </div>
+                        </div>
+
+                        <div class="options">
+                            <div class="toggle_btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="colecao" data-categoria="Infantojuvenil">
+                        <div class="left">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z" />
+                            </svg>
+                            <div class="content">
+                                <h1>Infantojuvenil</h1>
+                                <p><span class="contador" data-contador-de="Infantojuvenil">0</span> empréstimos</p>
+                            </div>
+                        </div>
+
+                        <div class="options">
+                            <div class="toggle_btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- tela de empréstimos de uma coleção especifica -->
+        <div class="screen colecao-screen">
+
+            <div class="head_wrapper">
+                <div class="back_btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
+                    </svg>
+                </div>
+
+                <div class="options">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="colecao-details">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" class="colecao-icone">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                </svg>
+                <div class="details">
+                    <p><span id="colecao-contador">0</span> empréstimos</p>
+                    <h1 id="colecao-titulo">Literatura</h1>
+                </div>
+            </div>
+
+            <div class="emprestimos-wrapper">
+                <div class="emprestimos" id="lista-emprestimos">
+                    <!-- itens de empréstimo são renderizados dinamicamente pelo arquivo .js -->
+                </div>
+
+                <div class="add-emprestimo-btn" id="btn-abrir-modal-novo">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- edição de empréstimo -->
+        <div class="modal-backdrop" id="modal-backdrop">
+            <div class="modal">
+                <h2 id="modal-titulo">Novo empréstimo</h2>
+                <form id="form-emprestimo">
+                    <label>
+                        Título do livro
+                        <input type="text" id="input-livro" placeholder="Ex: Dom Casmurro" required>
+                    </label>
+                    <label>
+                        Nome do leitor
+                        <input type="text" id="input-leitor" placeholder="Ex: Ana Beatriz" required>
+                    </label>
+                    <label>
+                        Data prevista de devolução
+                        <input type="date" id="input-prazo" required>
+                    </label>
+
+                    <div class="modal-actions">
+                        <button type="button" id="btn-cancelar-modal">Cancelar</button>
+                        <button type="submit" id="btn-salvar-emprestimo">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
