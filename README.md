@@ -98,3 +98,4 @@ plano para atualizar os dados salvos.
 ## Demonstração
 
 - Vídeo de demonstração: Hospedado no Youtube (link do vídeo enviado no Google Classroom).
+- Link do GitHub Pages: https://marco21106-png.github.io/Biblioteca---Controle-de-Empr-stimos/
